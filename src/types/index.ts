@@ -99,6 +99,8 @@ export interface Contact {
   productsKeyWords: string;
 
   instagram: string;
+  facebook: string;
+  whatsIcon: string;
   origin: string;
 
   secondTitle: string;

@@ -4,10 +4,9 @@ interface IHeaderProps {
   bgColor: string;
 }
 
-export const Container = styled.header<IHeaderProps>`
+export const Container = styled.div<IHeaderProps>`
   width: 100%;
-  min-height: 5rem;
-  height: fit-content;
+  height: 6rem;
   background-color: ${props => props.bgColor || 'white'};
   display: flex;
   align-items: center;
@@ -18,8 +17,9 @@ export const Container = styled.header<IHeaderProps>`
   padding-left: 10%;
   padding-right: 10%;
 
-  & img {
-    max-height: 75px;
+  & .logo {
+    /* max-height: 75px; */
+    height: 100%;
     max-width: 55vw;
   }
 
@@ -31,51 +31,45 @@ export const Container = styled.header<IHeaderProps>`
     font-weight: 600;
   }
 
-  & .icon {
+  @media screen and (max-width: 600px) {
+    padding: 1rem;
+  }
+`;
+
+export const IconWrapper = styled.div`
+  width: fit-content;
+  height: 100%;
+  gap: 1.2rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & a {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    box-sizing: border-box;
     gap: 0.675rem;
 
-    & i {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      svg {
-        size: 80px;
-      }
-    }
-
-    & p {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      font-size: 20px;
-      color: rgb(5,55,124);
-      text-decoration: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-size: 20px;
+    color: rgb(5,55,124);
 
       :hover {
         text-decoration: underline;
         cursor: pointer;
         color: #294dff;
       }
-    }
-
-    :hover {
-      cursor: pointer;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    padding: 1rem;
-
-    & .icon {
-      & p {
-        display: none;
-      }
+    
+    & img {
+      height: 100%;
+      box-sizing: border-box;
     }
   }
 `;

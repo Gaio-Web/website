@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import Swipe from '../../assets/Gifs/animation_500_lhwe2pfh.gif';
-
 export const Container = styled.section`
   width: 100%;
   height: 100vh;
@@ -110,11 +108,6 @@ export const FourthSection = styled.div`
   & .btn {
       width: 40%;
     }
-
-  /* background-image: url(${Swipe});
-  background-size: 10%;
-  background-repeat: no-repeat;
-  background-position: bottom right; */
 
     & h1 {
         font-family: 'Inter', sans-serif;

@@ -6,7 +6,7 @@ import UnsplashProductsImage from '../../Components/UnsplashAPI/UnsplashProducts
 interface ISecondSectionProp {
   photoBase64: string;
   products: string;
-  src: any;
+  src?: any;
   onClick: any;
   isAutonomous: any;
   mainColor: string;

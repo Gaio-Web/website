@@ -6,8 +6,8 @@ import UnsplashCoverImage from '../../Components/UnsplashAPI/UnsplashCover';
 interface IFirstSectionProp {
   call: string | undefined;
   description: string | undefined;
-  photoBase64: string | undefined;
-  src: any;
+  photoBase64?: string | undefined;
+  src?: any;
   onClick?: any;
   mainColor: string | undefined;
   secondaryColor: string | undefined;

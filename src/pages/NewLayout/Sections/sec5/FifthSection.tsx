@@ -6,7 +6,7 @@ import UnsplasHistoryImage from '../../Components/UnsplashAPI/UnsplashHistory';
 interface IFifthSectionProp {
   photoBase64: string;
   history: string;
-  src: any;
+  src?: any;
   onClick: any;
   isAutonomous: string;
   mainColor: string;

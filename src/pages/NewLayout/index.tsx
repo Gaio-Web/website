@@ -21,10 +21,6 @@ import { Contact } from '../../types';
 
 import { HeaderSection } from './Sections/HeaderSection/HeaderSection';
 
-import Photo1 from '../../assets/foto1.png';
-import Photo2 from '../../assets/foto2.png';
-import Photo3 from '../../assets/foto3.png';
-
 import {Helmet} from 'react-helmet';
 
 import Aos from 'aos';
@@ -148,6 +144,8 @@ function NewLayout(): JSX.Element {
                 name={data.name}
                 insta={data.instagram}
                 color={data.color}
+                face={data.facebook}
+                whats={data.whatsApp}
             />
 
             <FirstSection
@@ -156,7 +154,6 @@ function NewLayout(): JSX.Element {
                 call={data?.call.replace(/^"|"$/g, '')}
                 description={data.description}
                 photoBase64={data.photos.photo1.base64}
-                src={Photo1}
                 coverKeyWords={data.coverKeyWords}
                 onClick={handleWhatsClick}
             />
@@ -168,7 +165,6 @@ function NewLayout(): JSX.Element {
                     accentColor={data.accentColor}
                     products={data.products}
                     photoBase64={data.photos.photo3.base64}
-                    src={Photo3}
                     onClick={handleWhatsClick}
                     coverKeyWords={data.coverKeyWords}
                     secondTitle={data.secondTitle}
@@ -224,7 +220,6 @@ function NewLayout(): JSX.Element {
                     accentColor={data.accentColor}
                     history={data?.history.replace(/^"|"$/g, '')}
                     photoBase64={data.photos.photo2.base64}
-                    src={Photo2}
                     onClick={handleWhatsClick}
                     coverKeyWords={data.coverKeyWords}
                     fifthTitle={data.fifthTitle}
