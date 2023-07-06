@@ -20,7 +20,8 @@ export const Container = styled.div<IHeaderProps>`
   & .logo {
     /* max-height: 75px; */
     height: 100%;
-    max-width: 55vw;
+    max-width: 60vw;
+    border-radius: 8px;
   }
 
   & h1 {
