@@ -101,6 +101,8 @@ export interface Contact {
   instagram: string;
   facebook: string;
   whatsIcon: string;
+  tiktok: string;
+  youtube: string;
   origin: string;
 
   secondTitle: string;

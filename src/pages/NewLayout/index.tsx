@@ -146,6 +146,8 @@ function NewLayout(): JSX.Element {
                 color={data.color}
                 face={data.facebook}
                 whats={data.whatsApp}
+                youtube={data.youtube}
+                tiktok={data.tiktok}
             />
 
             <FirstSection

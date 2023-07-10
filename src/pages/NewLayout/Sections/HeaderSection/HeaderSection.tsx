@@ -5,6 +5,8 @@ import { AiFillInstagram } from 'react-icons/ai'
 import Insta from '../../../../assets/svg/insta.png'
 import Face from '../../../../assets/svg/face.png'
 import Whats from '../../../../assets/svg/whats.png'
+import Tiktok from '../../../../assets/svg/tiktok.png'
+import Youtube from '../../../../assets/svg/youtube.png'
 
 interface IHeaderSectionProp {
   photoBase64?: string;
@@ -14,9 +16,11 @@ interface IHeaderSectionProp {
   face?: string;
   whats?: string;
   color: string;
+  youtube?:string;
+  tiktok?: string;
 }
 
-function HeaderSection({ photoBase64, secondaryColor, name, insta, whats, face, color }: IHeaderSectionProp): JSX.Element {
+function HeaderSection({ photoBase64, secondaryColor, name, insta, whats, face, color, youtube, tiktok }: IHeaderSectionProp): JSX.Element {
     return (
         <Container style={{ justifyContent: insta || whats || face ?  'space-between' : 'center'}} bgColor={color}>
             {
@@ -34,7 +38,11 @@ function HeaderSection({ photoBase64, secondaryColor, name, insta, whats, face, 
                 <a className='icon' href={`https://instagram.com/${insta}`} target='blank'>
                     <img className='badge' src={Insta} />
                    {
-                    face === '' || face === undefined && whats === '' || whats === undefined ? (
+                    face === '' || face === undefined && 
+                    whats != '' || whats === undefined && 
+                    tiktok === '' || tiktok === undefined && 
+                    youtube === '' || youtube === undefined 
+                    ? (
                         <p>@{insta}</p>
                     ):(
                         <> 
@@ -50,6 +58,26 @@ function HeaderSection({ photoBase64, secondaryColor, name, insta, whats, face, 
                 ) : (
                     <a className='icon' href={face} target='blank'>
                         <img className='badge' src={Face} />
+                    </a>
+                )
+            }
+            {
+                tiktok === '' || tiktok === undefined ? (
+                    <>
+                    </>
+                ) : (
+                    <a className='icon' href={tiktok} target='blank'>
+                        <img className='badge' src={Tiktok} />
+                    </a>
+                )
+            }
+            {
+                youtube === '' || youtube === undefined ? (
+                    <>
+                    </>
+                ) : (
+                    <a className='icon' href={youtube} target='blank'>
+                        <img className='badge' src={Youtube} />
                     </a>
                 )
             }
