@@ -158,6 +158,7 @@ function NewLayout(): JSX.Element {
                 photoBase64={data.photos.photo1.base64}
                 coverKeyWords={data.coverKeyWords}
                 onClick={handleWhatsClick}
+                isVideo={data.isVideo}
             />
 
             <Suspense fallback={ <ReactLoading type={'spin'} color={'#05377C'} height={200} width={100}/>}>
