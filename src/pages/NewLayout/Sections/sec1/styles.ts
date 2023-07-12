@@ -52,6 +52,11 @@ export const Container = styled.div`
         max-width: 50vh;
         border-radius: 8px;
       }
+
+      & video {
+        max-width: 50vh;
+        border-radius: 8px;
+      }
     }
   }
 
@@ -87,6 +92,10 @@ export const Container = styled.div`
       justify-content: center;
 
         & img {
+        width: 100%;
+      }
+      
+      & video {        
         width: 100%;
       }
       }
