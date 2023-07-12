@@ -38,15 +38,15 @@ function HeaderSection({ photoBase64, secondaryColor, name, insta, whats, face, 
                 <a className='icon' href={`https://instagram.com/${insta}`} target='blank'>
                     <img className='badge' src={Insta} />
                    {
-                    face === '' || face === undefined && 
-                    whats != '' || whats === undefined && 
-                    tiktok === '' || tiktok === undefined && 
+                    face === '' || face === undefined || 
+                    whats != '' || whats === undefined || 
+                    tiktok === '' || tiktok === undefined || 
                     youtube === '' || youtube === undefined 
                     ? (
-                        <p>@{insta}</p>
-                    ):(
                         <> 
                         </>
+                        ):(
+                        <p>@{insta}</p>
                     )
                    } 
                 </a>
