@@ -12,9 +12,10 @@ interface IFirstSectionProp {
   mainColor: string | undefined;
   secondaryColor: string | undefined;
   coverKeyWords: string;
+  isVideo: string | undefined
 }
 
-function FirstSection({mainColor, secondaryColor, call, description, photoBase64, src, onClick, coverKeyWords}: IFirstSectionProp): JSX.Element {
+function FirstSection({mainColor, isVideo, secondaryColor, call, description, photoBase64, src, onClick, coverKeyWords}: IFirstSectionProp): JSX.Element {
     return (
         <Container style={{backgroundColor: mainColor}}>
             <div id='firstSection' className={'first-wrapper'}>
@@ -36,7 +37,19 @@ function FirstSection({mainColor, secondaryColor, call, description, photoBase64
                                 }}
                             />
                         ) : (
-                            <img fetch-priority={'low'} src={photoBase64} alt={'foto de capa'} loading='lazy'/>
+                            <>
+                            {
+                                isVideo === '1' ? (
+                                    <>
+                                        <video src={photoBase64} controls />
+                                    </>
+                                ) : (
+                                    <>
+                                        <img src={photoBase64} alt={'foto de capa'} loading='lazy'/>
+                                    </>
+                                )
+                            }
+                        </>
                         )}
                     </div>
                 </div>

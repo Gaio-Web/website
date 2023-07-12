@@ -115,4 +115,6 @@ export interface Contact {
   isAddressVisible: string;
   isSecondButtonDisabled: string;
   isThirdButtonDisabled: string;
+
+  isVideo: string;
 }
