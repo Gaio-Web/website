@@ -32,6 +32,7 @@ export const Container = styled.div`
         font-family: 'Inter', sans-serif;
         font-size: 26px;
         color: #f0f0f0;
+        margin-bottom: 15px;
       }
 
       & p {

@@ -3,9 +3,11 @@ import { useState } from 'react';
 
 interface ICopyToClipboardButtonProps {
   path: string;
+  text: string;
+  btnColor?: string;
 }
 
-const CopyToClipboardButton = ({ path }: ICopyToClipboardButtonProps) => {
+const CopyToClipboardButton = ({ path, text, btnColor }: ICopyToClipboardButtonProps) => {
     const [open, setOpen] = useState(false);
     const handleClick = () => {
         setOpen(true);
@@ -16,10 +18,10 @@ const CopyToClipboardButton = ({ path }: ICopyToClipboardButtonProps) => {
         <>
             <Button
                 onClick={handleClick}
-                sx={{ width: '50%'}}
+                sx={{ width: '50%', backgroundColor: btnColor}}
                 variant="contained"
             >
-            Copiar endereço
+                {text}
             </Button>
             <Snackbar
                 open={open}

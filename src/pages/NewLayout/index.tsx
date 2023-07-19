@@ -37,6 +37,8 @@ function NewLayout(): JSX.Element {
     const [data, setData] = useState<Contact | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
 
+    const voouColor = '#F26600'
+
     useEffect(() => {
         async function fetchData() {
             setLoading(true);
@@ -98,6 +100,12 @@ function NewLayout(): JSX.Element {
         }
     };
 
+    const [website, setWebsite] = useState<string | undefined>('')
+
+    useEffect(() => {
+        setWebsite(data?.convertedName)
+    })
+
     useEffect(() => {
         setImagesLoaded(false);
         setTimeout(() => {
@@ -152,7 +160,7 @@ function NewLayout(): JSX.Element {
 
             <FirstSection
                 mainColor={data.mainColor}
-                secondaryColor={data.secondaryColor}
+                secondaryColor={ website === 'voou-viagens' ? voouColor : data.secondaryColor}
                 call={data?.call.replace(/^"|"$/g, '')}
                 description={data.description}
                 photoBase64={data.photos.photo1.base64}
@@ -164,8 +172,8 @@ function NewLayout(): JSX.Element {
             <Suspense fallback={ <ReactLoading type={'spin'} color={'#05377C'} height={200} width={100}/>}>
                 <SecondSection
                     isAutonomous={data.isAutonomous}
-                    mainColor={data.mainColor}
-                    accentColor={data.accentColor}
+                    mainColor={ data.mainColor}
+                    accentColor={ website === 'voou-viagens' ? voouColor : data.accentColor}
                     products={data.products}
                     photoBase64={data.photos.photo3.base64}
                     onClick={handleWhatsClick}
@@ -178,7 +186,7 @@ function NewLayout(): JSX.Element {
                 <ThirdSection
                     mainColor={data.mainColor}
                     accentColor={data.accentColor}
-                    secondaryColor={data.secondaryColor}
+                    secondaryColor={ website === 'voou-viagens' ? voouColor : data.secondaryColor}
 
                     isAutonomous={data.isAutonomous}
 
@@ -205,7 +213,7 @@ function NewLayout(): JSX.Element {
                             <div className='fourth-wrapper'>
                                 <NewSlider firebaseUrl={imgsUrls} haveURL={haveURL} coverKeyWords={data.coverKeyWords} />
                             </div>
-                            <button onClick={handleWhatsClick} style={{backgroundColor: data.secondaryColor }} className='btn'>Fale com a gente</button>
+                            <button onClick={handleWhatsClick} style={{backgroundColor: website === 'voou-viagens' ? voouColor : data.secondaryColor }} className='btn'>Fale com a gente</button>
                         </FourthSection>
                     </Suspense>
                 </>
@@ -220,7 +228,7 @@ function NewLayout(): JSX.Element {
                 <FifthSection
                     isAutonomous={data.isAutonomous}
                     mainColor={data.mainColor}
-                    accentColor={data.accentColor}
+                    accentColor={ website === 'voou-viagens' ? voouColor : data.accentColor}
                     history={data?.history.replace(/^"|"$/g, '')}
                     photoBase64={data.photos.photo2.base64}
                     onClick={handleWhatsClick}
@@ -275,6 +283,7 @@ function NewLayout(): JSX.Element {
                                 mainColor={data.mainColor}
                                 neightborhood={data.address.neighborhood}
                                 secondaryColor={data.secondaryColor}
+                                btnColor={website === 'voou-viagens' ? voouColor : ''}
                             />
                         </Suspense>
 

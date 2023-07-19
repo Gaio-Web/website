@@ -55,7 +55,7 @@ function FirstSection({mainColor, isVideo, secondaryColor, call, description, ph
                 </div>
 
 
-                <button onClick={onClick} style={{backgroundColor: secondaryColor}} className='btn-2'>Vamos conversar!</button>
+                <button onClick={onClick} style={{ backgroundColor: secondaryColor }} className='btn-2'>Vamos conversar!</button>
             </div>
         </Container>
     );

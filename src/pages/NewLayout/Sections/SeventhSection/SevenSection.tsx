@@ -12,29 +12,55 @@ interface ISeventhSectionProp {
   mainColor: string;
   secondaryColor: string;
   neightborhood: string;
+  btnColor?: string;
 }
 
-function SeventhSection({ mainColor, secondaryColor, neightborhood, zipCode, street, number, city, state, complement}: ISeventhSectionProp): JSX.Element{
+const VoouPIX = (): JSX.Element => {
+    return (
+        <>
+            <p>comercial@voouviagens.com.br</p>
+            <p>Agência <strong>001</strong></p>
+            <p>Conta <strong>41903940-9</strong></p>
+            <p>CNPJ <strong>51.121.311/0001-40</strong> </p>
+        </>
+    )
+}
+
+function SeventhSection({ mainColor, secondaryColor, neightborhood, zipCode, street, number, city, state, complement, btnColor}: ISeventhSectionProp): JSX.Element{
     return (
         <Container>
             <div id='seventhSection' className="seventh-wrapper">
                 <h1 className="sectionTitle" style={{ color: mainColor }}>
-          Endereço
+                    { import.meta.env.VITE_USER_ID == '351933308275' ? (
+                        <>
+                        Nosso PIX
+                        </>
+                    ):(
+                        <>
+                        Endereço
+                        </>
+                    )}
                 </h1>
-
                 <div className="adressWrapper">
                     <div className="userAdress">
-                        {zipCode == '' ? (
-                            <p>
-                Rua exemplo, 45, 302, <br /> sua cidade / estado
-                            </p>
+                        {import.meta.env.VITE_USER_ID == '351933308275' ? (
+                            <>
+                                <VoouPIX />
+                            </>
                         ) : (
-                            <p>
-                                {street}, {neightborhood}, {number},{' '}
-                                {complement}
-                                <br />
-                                {city}/{state}{' '}
-                            </p>
+                            <>
+                                {zipCode == '' ? (
+                                    <p>
+                                        Rua exemplo, 45, 302, <br /> sua cidade / estado
+                                    </p>
+                                ) : (
+                                    <p>
+                                        {street}, {neightborhood}, {number}, {complement}
+                                        <br />
+                                        {city}/{state}
+                                    </p>
+                                )}
+                            </>
                         )}
                     </div>
 
@@ -46,34 +72,23 @@ function SeventhSection({ mainColor, secondaryColor, neightborhood, zipCode, str
                             boxSizing: 'border-box'
                         }}
                     >
-                        <CopyToClipboardButton
-                            path={
-                                `${street}, ${neightborhood}, ${number}, ${complement} ${city}, ${state}, ${zipCode}`
-                            }
-                        />
+                    {import.meta.env.VITE_USER_ID == '351933308275' ? (
+                            <>
+                                <CopyToClipboardButton
+                                    btnColor={btnColor}
+                                    text='Copiar dados do PIX'
+                                    path={'comercial@voouviagens.com.br'}
+                                />
+                            </>
+                        ) : (
+                            <>
+                                <CopyToClipboardButton
+                                    text='Copiar endereço'
+                                    path={`${street}, ${neightborhood}, ${number}, ${complement} ${city}, ${state}, ${zipCode}`}
+                                />
+                            </>
+                        )}
                     </div>
-
-                    {/* <button
-                        className="buttonCopy"
-                        onClick={() =>
-                            navigator.clipboard.writeText(
-                                `${street}, ${number}, ${complement} ${city}, ${state}`
-                            )
-                        }
-                    >
-
-                        <div>
-                            <span style={{ backgroundColor: secondaryColor }}>
-                                <p>Copiar endereço</p>
-                            </span>
-                        </div>
-
-                        <div>
-                            <span>
-                                <p>Endereço copiado!</p>
-                            </span>
-                        </div>
-                    </button> */}
                 </div>
             </div>
         </Container>

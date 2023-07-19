@@ -52,6 +52,7 @@ export const Container = styled.div`
       font-family: 'Inter', sans-serif;
       font-size: 32px;
       margin: 0;
+      margin-bottom: 15px;
     }
 
     & .history {
