@@ -52,6 +52,11 @@ export const Container = styled.div`
       box-shadow: 0px 5px 5px 0 rgba(68, 67, 67, 0.2);
       border-radius: 12px;
 
+    @media screen and (max-width: 800px) {
+      font-size: 16px;
+      padding: 1rem;
+    }
+
       .userAdress {
         padding: 0 1rem 0.5rem;
         line-height: 2.5rem;

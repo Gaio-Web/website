@@ -18,7 +18,7 @@ const CopyToClipboardButton = ({ path, text, btnColor }: ICopyToClipboardButtonP
         <>
             <Button
                 onClick={handleClick}
-                sx={{ width: '50%', backgroundColor: btnColor}}
+                sx={{ width: '100%', backgroundColor: btnColor}}
                 variant="contained"
             >
                 {text}
