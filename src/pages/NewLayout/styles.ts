@@ -167,7 +167,6 @@ export const ImageSchedule = styled.div`
   & .img-wrapper {
     width: 100%;
     height: fit-content;
-    min-height: 20rem;
     padding: 5% 10%;
     display: flex;
     flex-direction: column;
@@ -176,12 +175,13 @@ export const ImageSchedule = styled.div`
     & img {
       width: 70%;
       object-fit: contain;
+      border-radius: 8px;
     }
   }
 
   @media screen and (max-width: 600px) {
     & .img-wrapper {
-      padding: 5% 10%;
+      padding: 5%;
 
       & img {
         width: 100%;
