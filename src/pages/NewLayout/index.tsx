@@ -9,6 +9,8 @@ import {
 
 import { FirstSection, FifthSection, FooterSection, NewCalendar, SecondSection, SeventhSection, ThirdSection } from './LazyLoading';
 
+import { FaWhatsapp } from 'react-icons/fa'
+
 
 import Typewriter from '../Components/ErrorPage';
 
@@ -258,6 +260,20 @@ function NewLayout(): JSX.Element {
                                 <ImageSchedule style={{backgroundColor: data.photos.schedules.type}}>
                                     <div className='img-wrapper'>
                                         <img src={data.photos.schedules.base64} alt='horarios'/>
+                                        {
+                                             website === 'voou-viagens' ? (
+                                                <>
+                                                    <button style={{ backgroundColor: voouColor}}>
+                                                        <FaWhatsapp size={24}/>
+                                                        Solicite um orçamento
+                                                    </button>
+                                                </>
+                                             ) : (
+                                                <>
+
+                                                </>
+                                             )
+                                        }
                                     </div>
                                 </ImageSchedule>
                             )}

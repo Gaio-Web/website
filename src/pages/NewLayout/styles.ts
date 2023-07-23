@@ -177,6 +177,15 @@ export const ImageSchedule = styled.div`
       object-fit: contain;
       border-radius: 8px;
     }
+
+    & button {
+      margin-top: 2rem;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
   }
 
   @media screen and (max-width: 600px) {
@@ -186,6 +195,10 @@ export const ImageSchedule = styled.div`
       & img {
         width: 100%;
       }
+
+      & button {
+      width: 100%;
+    }
     }
   }
 `;
