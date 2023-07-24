@@ -212,7 +212,7 @@ function NewLayout(): JSX.Element {
                     <Suspense fallback={ <ReactLoading type={'spin'} color={'#05377C'} height={200} width={100}/>}>
                         <FourthSection>
                             {
-                                data?.galleryTitle == '' ? (
+                                data?.galleryTitle == '' || data?.galleryTitle == null ? (
                                     <h1>Galeria de fotos</h1>
                                 ) : (
                                     <h1>{data.galleryTitle}</h1>
