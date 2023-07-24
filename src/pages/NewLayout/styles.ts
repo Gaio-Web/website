@@ -107,6 +107,7 @@ export const FourthSection = styled.div`
 
   & .btn {
       width: 40%;
+      margin-top: 15px;
     }
 
     & h1 {

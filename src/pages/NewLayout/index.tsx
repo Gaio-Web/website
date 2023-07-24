@@ -211,7 +211,13 @@ function NewLayout(): JSX.Element {
                 <>
                     <Suspense fallback={ <ReactLoading type={'spin'} color={'#05377C'} height={200} width={100}/>}>
                         <FourthSection>
-                            <h1>Galeria de fotos</h1>
+                            {
+                                data?.galleryTitle == '' ? (
+                                    <h1>Galeria de fotos</h1>
+                                ) : (
+                                    <h1>{data.galleryTitle}</h1>
+                                )
+                            }
                             <div className='fourth-wrapper'>
                                 <NewSlider firebaseUrl={imgsUrls} haveURL={haveURL} coverKeyWords={data.coverKeyWords} />
                             </div>

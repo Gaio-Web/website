@@ -116,5 +116,7 @@ export interface Contact {
   isSecondButtonDisabled: string;
   isThirdButtonDisabled: string;
 
+  galleryTitle: string;
+
   isVideo: string;
 }
