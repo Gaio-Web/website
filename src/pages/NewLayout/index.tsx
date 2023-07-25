@@ -169,7 +169,8 @@ function NewLayout(): JSX.Element {
                 coverKeyWords={data.coverKeyWords}
                 onClick={handleWhatsClick}
                 isVideo={data.isVideo}
-            />
+                website={website}
+                />
 
             <Suspense fallback={ <ReactLoading type={'spin'} color={'#05377C'} height={200} width={100}/>}>
                 <SecondSection
@@ -181,7 +182,8 @@ function NewLayout(): JSX.Element {
                     onClick={handleWhatsClick}
                     coverKeyWords={data.coverKeyWords}
                     secondTitle={data.secondTitle}
-                />
+                    website={website}
+                    />
             </Suspense>
 
             <Suspense fallback={ <ReactLoading type={'spin'} color={'#05377C'} height={200} width={100}/>}>
@@ -189,21 +191,22 @@ function NewLayout(): JSX.Element {
                     mainColor={data.mainColor}
                     accentColor={data.accentColor}
                     secondaryColor={ website === 'voou-viagens' ? voouColor : data.secondaryColor}
-
+                    
                     isAutonomous={data.isAutonomous}
-
+                    
                     quality1={data.quality1.charAt(0).toUpperCase() + data.quality1.slice(1)}
                     qualitydescription1={data?.qualitydescription1.replace(/^"|"$/g, '')}
-
+                    
                     quality2={data.quality2.charAt(0).toUpperCase() + data.quality2.slice(1)}
                     qualitydescription2={data?.qualitydescription2.replace(/^"|"$/g, '')}
-
+                    
                     quality3={data.quality3.charAt(0).toUpperCase() + data.quality3.slice(1)}
                     qualitydescription3={data?.qualitydescription3.replace(/^"|"$/g, '')}
-
+                    
                     onClick={handleWhatsClick}
-
+                    
                     thirdTitle={data?.thirdTitle}
+                    website={website}
                 />
             </Suspense>
 
@@ -221,7 +224,7 @@ function NewLayout(): JSX.Element {
                             <div className='fourth-wrapper'>
                                 <NewSlider firebaseUrl={imgsUrls} haveURL={haveURL} coverKeyWords={data.coverKeyWords} />
                             </div>
-                            <button onClick={handleWhatsClick} style={{backgroundColor: website === 'voou-viagens' ? voouColor : data.secondaryColor }} className='btn'>Fale com a gente</button>
+                            <button onClick={handleWhatsClick} style={{backgroundColor: website === 'voou-viagens' ? voouColor : data.secondaryColor, borderRadius: website === 'voou-viagens' ? '100px' : '' }} className='btn'>Fale com a gente</button>
                         </FourthSection>
                     </Suspense>
                 </>
@@ -242,6 +245,7 @@ function NewLayout(): JSX.Element {
                     onClick={handleWhatsClick}
                     coverKeyWords={data.coverKeyWords}
                     fifthTitle={data.fifthTitle}
+                    website={website}
                 />
             </Suspense>
 
@@ -269,7 +273,7 @@ function NewLayout(): JSX.Element {
                                         {
                                              website === 'voou-viagens' ? (
                                                 <>
-                                                    <button style={{ backgroundColor: voouColor}}>
+                                                    <button style={{ backgroundColor: voouColor, borderRadius: website === 'voou-viagens' ? '100px' : ''}}>
                                                         <FaWhatsapp size={24}/>
                                                         Solicite um orçamento
                                                     </button>
@@ -306,6 +310,7 @@ function NewLayout(): JSX.Element {
                                 neightborhood={data.address.neighborhood}
                                 secondaryColor={data.secondaryColor}
                                 btnColor={website === 'voou-viagens' ? voouColor : ''}
+                                website={website}
                             />
                         </Suspense>
 

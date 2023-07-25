@@ -13,6 +13,7 @@ interface ISeventhSectionProp {
   secondaryColor: string;
   neightborhood: string;
   btnColor?: string;
+  website: string | undefined;
 }
 
 const VoouPIX = (): JSX.Element => {
@@ -26,7 +27,7 @@ const VoouPIX = (): JSX.Element => {
     )
 }
 
-function SeventhSection({ mainColor, secondaryColor, neightborhood, zipCode, street, number, city, state, complement, btnColor}: ISeventhSectionProp): JSX.Element{
+function SeventhSection({ mainColor, website ,secondaryColor, neightborhood, zipCode, street, number, city, state, complement, btnColor}: ISeventhSectionProp): JSX.Element{
     return (
         <Container>
             <div id='seventhSection' className="seventh-wrapper">
@@ -78,6 +79,7 @@ function SeventhSection({ mainColor, secondaryColor, neightborhood, zipCode, str
                                     btnColor={btnColor}
                                     text='Copiar dados do PIX'
                                     path={'comercial@voouviagens.com.br'}
+                                    btnBorder={website == 'voou-viagens' ? '100px' : ''}
                                 />
                             </>
                         ) : (

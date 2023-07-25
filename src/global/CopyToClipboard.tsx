@@ -5,9 +5,10 @@ interface ICopyToClipboardButtonProps {
   path: string;
   text: string;
   btnColor?: string;
+  btnBorder?: string;
 }
 
-const CopyToClipboardButton = ({ path, text, btnColor }: ICopyToClipboardButtonProps) => {
+const CopyToClipboardButton = ({ path, text, btnColor, btnBorder }: ICopyToClipboardButtonProps) => {
     const [open, setOpen] = useState(false);
     const handleClick = () => {
         setOpen(true);
@@ -18,7 +19,7 @@ const CopyToClipboardButton = ({ path, text, btnColor }: ICopyToClipboardButtonP
         <>
             <Button
                 onClick={handleClick}
-                sx={{ width: '100%', backgroundColor: btnColor}}
+                sx={{ width: '100%', backgroundColor: btnColor, borderRadius: btnBorder}}
                 variant="contained"
             >
                 {text}
