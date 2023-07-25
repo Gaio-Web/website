@@ -273,7 +273,7 @@ function NewLayout(): JSX.Element {
                                         {
                                              website === 'voou-viagens' ? (
                                                 <>
-                                                    <button style={{ backgroundColor: voouColor, borderRadius: website === 'voou-viagens' ? '100px' : ''}}>
+                                                    <button style={{ backgroundColor: voouColor, borderRadius: website === 'voou-viagens' ? '100px' : ''}} onClick={handleWhatsClick}>
                                                         <FaWhatsapp size={24}/>
                                                         Solicite um orçamento
                                                     </button>
