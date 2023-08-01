@@ -264,9 +264,9 @@ function NewLayout(): JSX.Element {
               }}
             >
               {data?.galleryTitle == "" || data?.galleryTitle == null ? (
-                <h1>Galeria de fotos</h1>
+                <h1 style={{ color: data.mainColor }}>Galeria de fotos</h1>
               ) : (
-                <h1>{data.galleryTitle}</h1>
+                <h1 style={{ color: data.mainColor }}>{data.galleryTitle}</h1>
               )}
               <div className="fourth-wrapper">
                 <NewSlider

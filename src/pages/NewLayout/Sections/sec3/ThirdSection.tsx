@@ -52,7 +52,9 @@ function ThirdSection({
           </>
         ) : (
           <>
-            <h1>{thirdTitle}</h1>
+            <h1 className="sectionTitle" style={{ color: mainColor }}>
+              {thirdTitle}
+            </h1>
           </>
         )}
         <div className="cards-wrapper">

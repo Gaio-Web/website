@@ -37,7 +37,7 @@ function FirstSection({
       <div id="firstSection" className={"first-wrapper"}>
         <div className="main-content-wrapper">
           <div className="call-n-desc">
-            <h1 style={{ color: website == "voou-viagens" ? "#00b2ff" : "" }}>
+            <h1 style={{ color: website == "voou-viagens" ? "#F26600" : "" }}>
               {call}
             </h1>
             <p style={{ color: website == "voou-viagens" ? "black" : "" }}>
