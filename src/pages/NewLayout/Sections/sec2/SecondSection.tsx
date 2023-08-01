@@ -1,7 +1,7 @@
-import React from 'react';
-import { Container } from './styles';
+import React from "react";
+import { Container } from "./styles";
 
-import UnsplashProductsImage from '../../Components/UnsplashAPI/UnsplashProducts';
+import UnsplashProductsImage from "../../Components/UnsplashAPI/UnsplashProducts";
 
 interface ISecondSectionProp {
   photoBase64: string;
@@ -16,47 +16,88 @@ interface ISecondSectionProp {
   website: string | undefined;
 }
 
-function SecondSection({ mainColor, accentColor,isAutonomous, photoBase64, products, src, onClick, coverKeyWords, secondTitle, website }: ISecondSectionProp): JSX.Element{
-    return (
-        <Container>
-            <div id='secondSection' className={'second-wrapper'}>
-                <div className='title-n-prod'>
-                    {
-                        secondTitle == '' || secondTitle == null ? (
-                            <>
-                                {isAutonomous == '1' ? (
-                                    <h1 className="sectionTitle" style={{color: mainColor}}>O que ofereço</h1>
-                                ) : (
-                                    <h1 className="sectionTitle" style={{color: mainColor}}>O que oferecemos</h1>
-                                )}
-                            </>
-                        ) : (
-                            <h1 className="sectionTitle" style={{color: mainColor, }}>{secondTitle}</h1>
-                        )
-                    }
-                    <p>{products}</p>
+function SecondSection({
+  mainColor,
+  accentColor,
+  isAutonomous,
+  photoBase64,
+  products,
+  src,
+  onClick,
+  coverKeyWords,
+  secondTitle,
+  website,
+}: ISecondSectionProp): JSX.Element {
+  return (
+    <Container
+      style={{ backgroundColor: website == "voou-viagens" ? "white" : "" }}
+    >
+      <div id="secondSection" className={"second-wrapper"}>
+        <div className="title-n-prod">
+          {secondTitle == "" || secondTitle == null ? (
+            <>
+              {isAutonomous == "1" ? (
+                <h1 className="sectionTitle" style={{ color: mainColor }}>
+                  O que ofereço
+                </h1>
+              ) : (
+                <h1 className="sectionTitle" style={{ color: mainColor }}>
+                  O que oferecemos
+                </h1>
+              )}
+            </>
+          ) : (
+            <h1 className="sectionTitle" style={{ color: mainColor }}>
+              {secondTitle}
+            </h1>
+          )}
+          <p>{products}</p>
 
-                    <button onClick={onClick} style={{backgroundColor: accentColor, color: 'white', marginTop: '20px', width: '100%', borderRadius: website === 'voou-viagens' ? '100px' : ''}} className='btn-1'>Fale com a gente!</button>
-                </div>
-                <div className="img-wrapper" data-aos="fade-up">
-                    {photoBase64 == '' ? (
-                        <UnsplashProductsImage
-                            data={{
-                                alt_description: 'office',
-                                urls: {
-                                    small: 'https://example.com/image.jpg',
-                                },
-                                coverKeyWords:coverKeyWords
-                            }}
-                        />
-                    ) : (
-                        <img src={photoBase64} alt={'foto de capa'} loading='lazy'/>
-                    )}
-                </div>
-                <button onClick={onClick} style={{backgroundColor: mainColor, color: accentColor, marginTop: '2rem', width: '100%', borderRadius: website === 'voou-viagens' ? '100px' : ''}} className='btn-2'>Fale com a gente!</button>
-                {/* <button onClick={onClick}> teste</button> */}
-            </div>
-        </Container>
-    );
+          <button
+            onClick={onClick}
+            style={{
+              backgroundColor: accentColor,
+              color: "white",
+              marginTop: "20px",
+              width: "100%",
+              borderRadius: website === "voou-viagens" ? "100px" : "",
+            }}
+            className="btn-1"
+          >
+            Fale com a gente!
+          </button>
+        </div>
+        <div className="img-wrapper" data-aos="fade-up">
+          {photoBase64 == "" ? (
+            <UnsplashProductsImage
+              data={{
+                alt_description: "office",
+                urls: {
+                  small: "https://example.com/image.jpg",
+                },
+                coverKeyWords: coverKeyWords,
+              }}
+            />
+          ) : (
+            <img src={photoBase64} alt={"foto de capa"} loading="lazy" />
+          )}
+        </div>
+        <button
+          onClick={onClick}
+          style={{
+            backgroundColor: mainColor,
+            color: accentColor,
+            marginTop: "2rem",
+            width: "100%",
+            borderRadius: website === "voou-viagens" ? "100px" : "",
+          }}
+          className="btn-2"
+        >
+          Fale com a gente!
+        </button>
+        {/* <button onClick={onClick}> teste</button> */}
+      </div>
+    </Container>
+  );
 }
 export { SecondSection };

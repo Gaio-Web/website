@@ -257,7 +257,12 @@ function NewLayout(): JSX.Element {
               />
             }
           >
-            <FourthSection>
+            <FourthSection
+              style={{
+                backgroundColor:
+                  website == "voou-viagens" ? "white" : "#fafafa",
+              }}
+            >
               {data?.galleryTitle == "" || data?.galleryTitle == null ? (
                 <h1>Galeria de fotos</h1>
               ) : (

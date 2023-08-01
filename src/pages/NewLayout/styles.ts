@@ -92,11 +92,9 @@ export const Loading = styled.section`
 `;
 
 export const FourthSection = styled.div`
-  background-color: #fafafa;
-  /* background-color: red; */
+  
   width: 100%;
   height: fit-content;
-  /* min-height: 92vh; */
   display: flex;
   flex-direction: column;
   gap: 1rem;
