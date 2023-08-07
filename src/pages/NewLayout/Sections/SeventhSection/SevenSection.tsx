@@ -19,7 +19,7 @@ interface ISeventhSectionProp {
 const VoouPIX = (): JSX.Element => {
   return (
     <>
-      <p>comercial@voouviagens.com.br</p>
+      <p>comercial@voouviagens.com</p>
       <p>
         Agência <strong>001</strong>
       </p>
@@ -96,7 +96,7 @@ function SeventhSection({
                 <CopyToClipboardButton
                   btnColor={btnColor}
                   text="Copiar dados do PIX"
-                  path={"comercial@voouviagens.com.br"}
+                  path={"comercial@voouviagens.com"}
                   btnBorder={website == "voou-viagens" ? "100px" : ""}
                 />
               </>
