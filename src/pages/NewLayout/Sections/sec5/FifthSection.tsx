@@ -63,7 +63,7 @@ function FifthSection({
             }}
             className="btn"
           >
-            Conversar por WhatsApp
+            Talk with us!
           </button>
         </div>
         <div className="img-wrapper" data-aos="fade-up">
@@ -89,7 +89,7 @@ function FifthSection({
           }}
           className="btn-2"
         >
-          Conversar por WhatsApp
+          Talk with us!
         </button>
       </div>
     </Container>
