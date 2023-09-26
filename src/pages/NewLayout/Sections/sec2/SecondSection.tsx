@@ -64,7 +64,7 @@ function SecondSection({
             }}
             className="btn-1"
           >
-            Fale com a gente!
+            Talk with us!
           </button>
         </div>
         <div className="img-wrapper" data-aos="fade-up">
@@ -93,7 +93,7 @@ function SecondSection({
           }}
           className="btn-2"
         >
-          Fale com a gente!
+          Talk with us!
         </button>
         {/* <button onClick={onClick}> teste</button> */}
       </div>

@@ -286,7 +286,7 @@ function NewLayout(): JSX.Element {
                 }}
                 className="btn"
               >
-                Fale com a gente
+                Talk with us
               </button>
             </FourthSection>
           </Suspense>

@@ -46,7 +46,7 @@ function ThirdSection({
               </h1>
             ) : (
               <h1 className="sectionTitle" style={{ color: mainColor }}>
-                Nossos diferenciais
+                Photo gallery
               </h1>
             )}
           </>
@@ -259,7 +259,7 @@ function ThirdSection({
           }}
           className="btn"
         >
-          Vamos conversar!
+          Lets talk!!
         </button>
       </div>
     </Container>

@@ -53,7 +53,7 @@ function FirstSection({
               }}
               className="btn-1"
             >
-              Vamos conversar!
+              Lets talk!!
             </button>
           </div>
           <div className="img-wrapper" data-aos="fade-up">
@@ -95,7 +95,7 @@ function FirstSection({
           }}
           className="btn-2"
         >
-          Vamos conversar!
+          Lets talk!!
         </button>
       </div>
     </Container>
